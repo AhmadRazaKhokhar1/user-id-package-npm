@@ -18,34 +18,22 @@ function userId(complexitySalt) {
   const complexity = getComplexity(complexitySalt);
 
   var idArray = [];
-  for (
-    let i = 0;
-    i <= (complexity.alphabetSalt ?? lowercaseAlphabets.length - 1);
-    i++
-  ) {
+  for (let i = 0; i <= lowercaseAlphabets.length - 1; i++) {
     const randomIndex = getRandomIndex(lowercaseAlphabets.length);
     const randomAlphabetLowerCase = lowercaseAlphabets[randomIndex];
     idArray.push(randomAlphabetLowerCase);
   }
-  for (
-    let j = 0;
-    j <= (complexity.alphabetSalt ?? uppercaseAlphabets.length - 1);
-    j++
-  ) {
+  for (let j = 0; j <= uppercaseAlphabets.length - 1; j++) {
     const randomIndex = getRandomIndex(uppercaseAlphabets.length);
     const randomAlphabetUpperCase = uppercaseAlphabets[randomIndex];
     idArray.push(randomAlphabetUpperCase);
   }
-  for (let k = 0; k <= (complexity.numberSalt ?? numbers.length - 1); k++) {
+  for (let k = 0; k <= numbers.length - 1; k++) {
     const randomIndex = getRandomIndex(numbers.length);
     const randomNumber = numbers[randomIndex];
     idArray.push(randomNumber);
   }
-  for (
-    let z = 0;
-    z <= (complexity.symbolSalt ?? uniqueSymbols.length - 1);
-    z++
-  ) {
+  for (let z = 0; z <= uniqueSymbols.length - 1; z++) {
     const randomIndex = getRandomIndex(uniqueSymbols.length);
     const randomUniqueSymbol = uniqueSymbols[randomIndex];
     idArray.push(randomUniqueSymbol);
@@ -62,8 +50,18 @@ function userId(complexitySalt) {
   const shuffled_arr = shuffleFinalArray(idArray);
   const unique_id = shuffled_arr.join("");
   const refined_id = unique_id.replace(/\./g, "");
-  console.log({ refined_id });
-  return refined_id;
+  const reduced_id = refined_id.substring(
+    0,
+    complexity === "basic"
+      ? 15
+      : complexity === "mid"
+      ? 30
+      : complexity === "advanced"
+      ? 50
+      : 20
+  );
+  console.log({ reduced_id });
+  return reduced_id;
 }
 userId(15);
 export default userId;
