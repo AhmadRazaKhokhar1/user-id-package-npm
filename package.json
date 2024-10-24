@@ -1,0 +1,39 @@
+{
+  "name": "user-id",
+  "version": "1.0.0",
+  "description": "Generate your unique user id (identification) with a very light weight package developed by Ahmad Raza Khokhar.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev":"node index.js"
+  },
+  "keywords": [
+    "user-id",
+    "uid",
+    "unique-user-id",
+    "unique",
+    "user",
+    "id",
+    "unique",
+    "id",
+    "id-generator",
+    "id",
+    "maker",
+    "id-package",
+    "user",
+    "id",
+    "identification",
+    "user",
+    "identification",
+    "ahmad",
+    "raza",
+    "khokhar",
+    "ark"
+  ],
+  "author": "Ahmad Raza Khokhar",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.5.1",
+    "typescript": "^5.5.4"
+  }
+}
