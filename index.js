@@ -38,13 +38,8 @@ function userId(complexitySalt) {
     const randomUniqueSymbol = uniqueSymbols[randomIndex];
     idArray.push(randomUniqueSymbol);
   }
-  console.log({
-    lowercaseAlphabets,
-    numbers,
-    uniqueSymbols,
-  });
   let date = new Date().getTime();
-  let randomFigure = Math.random() * date;
+  let randomFigure = Math.random() * (date +1);
   idArray.push(randomFigure);
   idArray.push(date);
   const shuffled_arr = shuffleFinalArray(idArray);
@@ -63,5 +58,5 @@ function userId(complexitySalt) {
   console.log({ reduced_id });
   return reduced_id;
 }
-userId(15);
+userId();
 export default userId;
