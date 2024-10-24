@@ -48,11 +48,11 @@ function userId(complexitySalt) {
   const reduced_id = refined_id.substring(
     0,
     complexity === "basic"
-      ? 15
+      ? 20
       : complexity === "mid"
-      ? 30
-      : complexity === "advanced"
       ? 50
+      : complexity === "advanced"
+      ? 70
       : 20
   );
   console.log({ reduced_id });
