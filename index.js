@@ -59,4 +59,5 @@ function userId(complexitySalt) {
   return reduced_id;
 }
 userId();
+
 export default userId;
